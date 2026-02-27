@@ -268,6 +268,15 @@
 		"C:/Qt/6.10.2/mingw_64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginTargets-relwithdebinfo.cmake",
 		"C:/Qt/6.10.2/mingw_64/lib/cmake/Qt6Widgets/Qt6QModernWindowsStylePluginAdditionalTargetInfo.cmake",
 		"C:/Qt/6.10.2/mingw_64/lib/cmake/Qt6Widgets/Qt6WidgetsVersionlessAliasTargets.cmake",
+		"C:/Qt/6.10.2/mingw_64/lib/cmake/Qt6Concurrent/Qt6ConcurrentConfigVersion.cmake",
+		"C:/Qt/6.10.2/mingw_64/lib/cmake/Qt6Concurrent/Qt6ConcurrentConfigVersionImpl.cmake",
+		"C:/Qt/6.10.2/mingw_64/lib/cmake/Qt6Concurrent/Qt6ConcurrentConfig.cmake",
+		"C:/Qt/Tools/CMake_64/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake",
+		"C:/Qt/6.10.2/mingw_64/lib/cmake/Qt6Concurrent/Qt6ConcurrentDependencies.cmake",
+		"C:/Qt/6.10.2/mingw_64/lib/cmake/Qt6Concurrent/Qt6ConcurrentTargets.cmake",
+		"C:/Qt/6.10.2/mingw_64/lib/cmake/Qt6Concurrent/Qt6ConcurrentTargets-relwithdebinfo.cmake",
+		"C:/Qt/6.10.2/mingw_64/lib/cmake/Qt6Concurrent/Qt6ConcurrentAdditionalTargetInfo.cmake",
+		"C:/Qt/6.10.2/mingw_64/lib/cmake/Qt6Concurrent/Qt6ConcurrentVersionlessAliasTargets.cmake",
 		"C:/Qt/6.10.2/mingw_64/lib/cmake/Qt6/Qt6ConfigVersion.cmake",
 		"C:/Qt/6.10.2/mingw_64/lib/cmake/Qt6/Qt6ConfigVersionImpl.cmake",
 		"C:/Qt/6.10.2/mingw_64/lib/cmake/Qt6/Qt6Config.cmake",
@@ -346,9 +355,21 @@
 			null
 		],
 		[
+			"E:/EMIATV/dev/gst_test/playlist_delegate.h",
+			"MU",
+			"EWIEGA46WW/moc_playlist_delegate.cpp",
+			null
+		],
+		[
 			"E:/EMIATV/dev/gst_test/playlist_manager.h",
 			"MU",
 			"EWIEGA46WW/moc_playlist_manager.cpp",
+			null
+		],
+		[
+			"E:/EMIATV/dev/gst_test/playlist_view.h",
+			"MU",
+			"EWIEGA46WW/moc_playlist_view.cpp",
 			null
 		],
 		[
@@ -364,6 +385,7 @@
 	"MOC_DEFINITIONS" : 
 	[
 		"MINGW_HAS_SECURE_API=1",
+		"QT_CONCURRENT_LIB",
 		"QT_CORE_LIB",
 		"QT_GUI_LIB",
 		"QT_NEEDS_QMAIN",
@@ -394,6 +416,7 @@
 		"C:/Qt/6.10.2/mingw_64/mkspecs/win32-g++",
 		"C:/Qt/6.10.2/mingw_64/include/QtWidgets",
 		"C:/Qt/6.10.2/mingw_64/include/QtGui",
+		"C:/Qt/6.10.2/mingw_64/include/QtConcurrent",
 		"C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++",
 		"C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32",
 		"C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward",
@@ -437,7 +460,9 @@
 		[ "E:/EMIATV/dev/gst_test/mainwindow.cpp", "MU", null ],
 		[ "E:/EMIATV/dev/gst_test/mediaitem.cpp", "MU", null ],
 		[ "E:/EMIATV/dev/gst_test/player.cpp", "MU", null ],
+		[ "E:/EMIATV/dev/gst_test/playlist_delegate.cpp", "MU", null ],
 		[ "E:/EMIATV/dev/gst_test/playlist_manager.cpp", "MU", null ],
+		[ "E:/EMIATV/dev/gst_test/playlist_view.cpp", "MU", null ],
 		[ "E:/EMIATV/dev/gst_test/settings.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],

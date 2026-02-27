@@ -9,6 +9,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     setWindowTitle("Emia TV");
 
+    playlist = new PlaylistManager(this);
     player = new VideoPlayer(this);
     player->setFile("C:/Users/crakn/Videos/Ilay alim-bavaka tao Gestemane ｜ Miora Volanandrasana - Jessy Andersen.mp4");
 
@@ -16,6 +17,13 @@ MainWindow::MainWindow(QWidget *parent)
     player->addVideoWidget(ui->video_preview);
 
     player->play();
+
+    // -------PL VIEW--------------
+    playlistView = new PlaylistView(this);
+    ui->layout_playlist->addWidget(playlistView);
+
+    connect(playlistView, &PlaylistView::filesDropped, this, &MainWindow::handleFilesDropped);
+
 }
 
 MainWindow::~MainWindow()
@@ -38,3 +46,30 @@ void MainWindow::on_btn_setting_clicked()
     settings->show();
 }
 
+
+void MainWindow::handleFilesDropped(const QStringList &files)
+{
+    for (const QString &file : files) {
+        processFile(file);
+    }
+}
+
+void MainWindow::processFile(const QString &file)
+{
+    playlist->addMedia(file);
+    QStandardItem *loadingItem = playlistView->addLoadingVideo(file);
+    analyzeFileAsync(file, loadingItem);
+}
+
+void MainWindow::analyzeFileAsync(const QString &file, QStandardItem *loadingItem)
+{
+    QFuture<void> future = QtConcurrent::run([=]() {
+        MediaItem item(file);
+        item.extractMetadata();
+        item.extractThumbnail();
+
+        QMetaObject::invokeMethod(this, [=]() {
+            playlistView->updateVideoItem(loadingItem, item);
+        }, Qt::QueuedConnection);
+    });
+}

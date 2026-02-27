@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.19)
 project(gst_test LANGUAGES CXX)
 
-find_package(Qt6 6.5 REQUIRED COMPONENTS Core Widgets)
+find_package(Qt6 6.5 REQUIRED COMPONENTS Core Widgets Concurrent)
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(GSTREAMER REQUIRED
     gstreamer-1.0
@@ -25,6 +25,8 @@ qt_add_executable(gst_test
     settings.h settings.cpp settings.ui
     playlist_manager.h playlist_manager.cpp
     mediaitem.h mediaitem.cpp
+    playlist_view.h playlist_view.cpp
+    playlist_delegate.h playlist_delegate.cpp
 )
 
 target_include_directories(gst_test PRIVATE ${GSTREAMER_INCLUDE_DIRS})
@@ -33,6 +35,7 @@ target_link_libraries(gst_test
     PRIVATE
         Qt::Core
         Qt::Widgets
+        Qt::Concurrent
         ${GSTREAMER_LIBRARIES}
 )
 
