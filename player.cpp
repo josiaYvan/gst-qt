@@ -19,11 +19,42 @@ VideoPlayer::VideoPlayer(QObject *parent)
     g_signal_connect(decodebin, "pad-added", G_CALLBACK(+[](
                                                              GstElement *src, GstPad *pad, gpointer data)
                                                         {
-                                                            GstElement *tee = GST_ELEMENT(data);
-                                                            GstPad *sinkPad = gst_element_get_static_pad(tee, "sink");
-                                                            gst_pad_link(pad, sinkPad);
-                                                            gst_object_unref(sinkPad);
-                                                        }), tee);
+                                                            VideoPlayer *player = static_cast<VideoPlayer*>(data);
+
+                                                            GstCaps *caps = gst_pad_get_current_caps(pad);
+                                                            const gchar *name = gst_structure_get_name(gst_caps_get_structure(caps, 0));
+
+                                                            if (g_str_has_prefix(name, "video/")) {
+
+                                                                GstPad *sinkPad = gst_element_get_static_pad(player->tee, "sink");
+                                                                gst_pad_link(pad, sinkPad);
+                                                                gst_object_unref(sinkPad);
+
+                                                            } else if (g_str_has_prefix(name, "audio/")) {
+
+                                                                GstElement *queue = gst_element_factory_make("queue", NULL);
+                                                                GstElement *convert = gst_element_factory_make("audioconvert", NULL);
+                                                                GstElement *resample = gst_element_factory_make("audioresample", NULL);
+                                                                GstElement *audioSink = gst_element_factory_make("autoaudiosink", NULL);
+
+                                                                gst_bin_add_many(GST_BIN(player->pipeline),
+                                                                                 queue, convert, resample, audioSink, NULL);
+
+                                                                gst_element_link_many(queue, convert, resample, audioSink, NULL);
+
+                                                                GstPad *sinkPad = gst_element_get_static_pad(queue, "sink");
+                                                                gst_pad_link(pad, sinkPad);
+                                                                gst_object_unref(sinkPad);
+
+                                                                gst_element_sync_state_with_parent(queue);
+                                                                gst_element_sync_state_with_parent(convert);
+                                                                gst_element_sync_state_with_parent(resample);
+                                                                gst_element_sync_state_with_parent(audioSink);
+                                                            }
+
+                                                            gst_caps_unref(caps);
+
+                                                        }), this);
 
     GstBus *bus = gst_element_get_bus(pipeline);
     gst_bus_add_watch(bus, busCallback, this);
