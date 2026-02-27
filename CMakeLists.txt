@@ -23,6 +23,8 @@ qt_add_executable(gst_test
     mainwindow.ui
     player.h player.cpp
     settings.h settings.cpp settings.ui
+    playlist_manager.h playlist_manager.cpp
+    mediaitem.h mediaitem.cpp
 )
 
 target_include_directories(gst_test PRIVATE ${GSTREAMER_INCLUDE_DIRS})

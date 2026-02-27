@@ -334,9 +334,21 @@
 			null
 		],
 		[
+			"E:/EMIATV/dev/gst_test/mediaitem.h",
+			"MU",
+			"EWIEGA46WW/moc_mediaitem.cpp",
+			null
+		],
+		[
 			"E:/EMIATV/dev/gst_test/player.h",
 			"MU",
 			"EWIEGA46WW/moc_player.cpp",
+			null
+		],
+		[
+			"E:/EMIATV/dev/gst_test/playlist_manager.h",
+			"MU",
+			"EWIEGA46WW/moc_playlist_manager.cpp",
 			null
 		],
 		[
@@ -423,7 +435,9 @@
 	[
 		[ "E:/EMIATV/dev/gst_test/main.cpp", "MU", null ],
 		[ "E:/EMIATV/dev/gst_test/mainwindow.cpp", "MU", null ],
+		[ "E:/EMIATV/dev/gst_test/mediaitem.cpp", "MU", null ],
 		[ "E:/EMIATV/dev/gst_test/player.cpp", "MU", null ],
+		[ "E:/EMIATV/dev/gst_test/playlist_manager.cpp", "MU", null ],
 		[ "E:/EMIATV/dev/gst_test/settings.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],
