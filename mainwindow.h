@@ -39,5 +39,6 @@ private:
     void handleFilesDropped(const QStringList &files);
     void processFile(const QString &file);
     void analyzeFileAsync(const QString &file, QStandardItem *loadingItem);
+    void handleReorderPlaylist();
 };
 #endif // MAINWINDOW_H

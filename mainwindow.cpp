@@ -23,7 +23,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->layout_playlist->addWidget(playlistView);
 
     connect(playlistView, &PlaylistView::filesDropped, this, &MainWindow::handleFilesDropped);
-
+    connect(playlistView, &PlaylistView::playlistReordered, this, &MainWindow::handleReorderPlaylist);
 }
 
 MainWindow::~MainWindow()
@@ -72,4 +72,9 @@ void MainWindow::analyzeFileAsync(const QString &file, QStandardItem *loadingIte
             playlistView->updateVideoItem(loadingItem, item);
         }, Qt::QueuedConnection);
     });
+}
+
+void MainWindow::handleReorderPlaylist() {
+    QStringList newOrder = playlistView->allVideos();
+    playlist->reorder(newOrder);
 }

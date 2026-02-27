@@ -27,3 +27,12 @@
 1497	9108	7939036913721782	CMakeFiles/gst_test.dir/gst_test_autogen/mocs_compilation.cpp.obj	aaf0fd07b998564b
 1506	9317	7939036913806257	CMakeFiles/gst_test.dir/mainwindow.cpp.obj	13ceee806fa56dfc
 9317	9899	7939036991919466	gst_test.exe	a9b569e52611c4fc
+16	1377	7939039569814558	gst_test_autogen/timestamp	15ccbcd391df285
+16	1377	7939039569814558	gst_test_autogen/mocs_compilation.cpp	15ccbcd391df285
+16	1377	7939039569814558	E:/EMIATV/dev/gst_test/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/gst_test_autogen/timestamp	15ccbcd391df285
+16	1377	7939039569814558	E:/EMIATV/dev/gst_test/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/gst_test_autogen/mocs_compilation.cpp	15ccbcd391df285
+1392	4488	7939039571089881	CMakeFiles/gst_test.dir/settings.cpp.obj	34c8381eafd5cd0c
+1383	8141	7939039571009891	CMakeFiles/gst_test.dir/main.cpp.obj	8f447255d5672341
+1379	8622	7939039570959329	CMakeFiles/gst_test.dir/gst_test_autogen/mocs_compilation.cpp.obj	aaf0fd07b998564b
+1387	8756	7939039571042112	CMakeFiles/gst_test.dir/mainwindow.cpp.obj	13ceee806fa56dfc
+8757	9309	7939039644735147	gst_test.exe	a9b569e52611c4fc
