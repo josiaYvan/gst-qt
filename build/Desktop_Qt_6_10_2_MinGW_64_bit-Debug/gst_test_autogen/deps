@@ -385,10 +385,12 @@ gst_test_autogen/timestamp: \
 	C:/Qt/6.10.2/mingw_64/include/QtGui/qtransform.h \
 	C:/Qt/6.10.2/mingw_64/include/QtGui/qwindowdefs.h \
 	C:/Qt/6.10.2/mingw_64/include/QtGui/qwindowdefs_win.h \
+	C:/Qt/6.10.2/mingw_64/include/QtWidgets/QDialog \
 	C:/Qt/6.10.2/mingw_64/include/QtWidgets/QMainWindow \
 	C:/Qt/6.10.2/mingw_64/include/QtWidgets/QPushButton \
 	C:/Qt/6.10.2/mingw_64/include/QtWidgets/QWidget \
 	C:/Qt/6.10.2/mingw_64/include/QtWidgets/qabstractbutton.h \
+	C:/Qt/6.10.2/mingw_64/include/QtWidgets/qdialog.h \
 	C:/Qt/6.10.2/mingw_64/include/QtWidgets/qmainwindow.h \
 	C:/Qt/6.10.2/mingw_64/include/QtWidgets/qpushbutton.h \
 	C:/Qt/6.10.2/mingw_64/include/QtWidgets/qsizepolicy.h \
@@ -806,5 +808,8 @@ gst_test_autogen/timestamp: \
 	E:/EMIATV/dev/gst_test/mainwindow.h \
 	E:/EMIATV/dev/gst_test/player.cpp \
 	E:/EMIATV/dev/gst_test/player.h \
+	E:/EMIATV/dev/gst_test/settings.cpp \
+	E:/EMIATV/dev/gst_test/settings.h \
 	E:/EMIATV/dev/gst_test/mainwindow.ui \
+	E:/EMIATV/dev/gst_test/settings.ui \
 	C:/Qt/Tools/CMake_64/bin/cmake.exe

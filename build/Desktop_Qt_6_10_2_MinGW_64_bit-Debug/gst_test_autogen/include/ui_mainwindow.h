@@ -26,6 +26,7 @@ public:
     QWidget *centralwidget;
     QGroupBox *videoWidget;
     QPushButton *btnAddView;
+    QPushButton *btn_setting;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -41,7 +42,10 @@ public:
         videoWidget->setGeometry(QRect(100, 50, 311, 201));
         btnAddView = new QPushButton(centralwidget);
         btnAddView->setObjectName("btnAddView");
-        btnAddView->setGeometry(QRect(470, 130, 56, 18));
+        btnAddView->setGeometry(QRect(445, 107, 81, 41));
+        btn_setting = new QPushButton(centralwidget);
+        btn_setting->setObjectName("btn_setting");
+        btn_setting->setGeometry(QRect(475, 157, 31, 31));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
@@ -60,7 +64,8 @@ public:
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
         videoWidget->setTitle(QString());
-        btnAddView->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
+        btnAddView->setText(QCoreApplication::translate("MainWindow", "Add View", nullptr));
+        btn_setting->setText(QString());
     } // retranslateUi
 
 };

@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "Player.h"
+#include "settings.h"
 #include <QPushButton>
 
 QT_BEGIN_NAMESPACE
@@ -19,8 +20,12 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+    void on_btn_setting_clicked();
+
 private:
     Ui::MainWindow *ui;
+    Settings *settings;
     VideoPlayer *player;
 };
 #endif // MAINWINDOW_H

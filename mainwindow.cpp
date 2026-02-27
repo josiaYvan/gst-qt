@@ -29,5 +29,21 @@ MainWindow::MainWindow(QWidget *parent)
 
 MainWindow::~MainWindow()
 {
+    delete settings;
     delete ui;
 }
+
+void MainWindow::on_btn_setting_clicked()
+{
+    if (settings) {
+        settings->raise();
+        return;
+    }
+
+    settings = new Settings(this);
+    settings->setAttribute(Qt::WA_DeleteOnClose, true);
+    connect(settings, &QObject::destroyed, this, [this]() { settings = nullptr; });
+
+    settings->show();
+}
+

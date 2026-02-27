@@ -81,6 +81,14 @@ build CMakeFiles/gst_test.dir/player.cpp.obj: CXX_COMPILER__gst_test_unscanned_D
   OBJECT_DIR = CMakeFiles\gst_test.dir
   OBJECT_FILE_DIR = CMakeFiles\gst_test.dir
 
+build CMakeFiles/gst_test.dir/settings.cpp.obj: CXX_COMPILER__gst_test_unscanned_Debug E$:/EMIATV/dev/gst_test/settings.cpp || cmake_object_order_depends_target_gst_test
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_WIDGETS_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\gst_test.dir\settings.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -fdiagnostics-color=always   -mms-bitfields
+  INCLUDES = -IE:/EMIATV/dev/gst_test/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/gst_test_autogen/include -I"C:/Program Files/gstreamer/1.0/msvc_x86_64/include/gstreamer-1.0" -I"C:/Program Files/gstreamer/1.0/msvc_x86_64/include/orc-0.4" -I"C:/Program Files/gstreamer/1.0/msvc_x86_64/include" -I"C:/Program Files/gstreamer/1.0/msvc_x86_64/include/glib-2.0" -I"C:/Program Files/gstreamer/1.0/msvc_x86_64/lib/glib-2.0/include" -isystem C:/Qt/6.10.2/mingw_64/include/QtCore -isystem C:/Qt/6.10.2/mingw_64/include -isystem C:/Qt/6.10.2/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.10.2/mingw_64/include/QtWidgets -isystem C:/Qt/6.10.2/mingw_64/include/QtGui
+  OBJECT_DIR = CMakeFiles\gst_test.dir
+  OBJECT_FILE_DIR = CMakeFiles\gst_test.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target gst_test
@@ -89,7 +97,7 @@ build CMakeFiles/gst_test.dir/player.cpp.obj: CXX_COMPILER__gst_test_unscanned_D
 #############################################
 # Link the executable gst_test.exe
 
-build gst_test.exe: CXX_EXECUTABLE_LINKER__gst_test_Debug CMakeFiles/gst_test.dir/gst_test_autogen/mocs_compilation.cpp.obj CMakeFiles/gst_test.dir/main.cpp.obj CMakeFiles/gst_test.dir/mainwindow.cpp.obj CMakeFiles/gst_test.dir/player.cpp.obj | C$:/Qt/6.10.2/mingw_64/lib/libQt6Widgets.a C$:/Qt/6.10.2/mingw_64/lib/libQt6Gui.a C$:/Qt/6.10.2/mingw_64/lib/libQt6Core.a C$:/Qt/6.10.2/mingw_64/lib/libQt6EntryPoint.a || gst_test_autogen gst_test_autogen_timestamp_deps
+build gst_test.exe: CXX_EXECUTABLE_LINKER__gst_test_Debug CMakeFiles/gst_test.dir/gst_test_autogen/mocs_compilation.cpp.obj CMakeFiles/gst_test.dir/main.cpp.obj CMakeFiles/gst_test.dir/mainwindow.cpp.obj CMakeFiles/gst_test.dir/player.cpp.obj CMakeFiles/gst_test.dir/settings.cpp.obj | C$:/Qt/6.10.2/mingw_64/lib/libQt6Widgets.a C$:/Qt/6.10.2/mingw_64/lib/libQt6Gui.a C$:/Qt/6.10.2/mingw_64/lib/libQt6Core.a C$:/Qt/6.10.2/mingw_64/lib/libQt6EntryPoint.a || gst_test_autogen gst_test_autogen_timestamp_deps
   FLAGS = -DQT_QML_DEBUG -g
   LINK_FLAGS = -mwindows
   LINK_LIBRARIES = C:/Qt/6.10.2/mingw_64/lib/libQt6Widgets.a  -lgstvideo-1.0  -lgstapp-1.0  -lgstbase-1.0  -lgstreamer-1.0  -lgobject-2.0  -lglib-2.0  -lintl  C:/Qt/6.10.2/mingw_64/lib/libQt6Gui.a  C:/Qt/6.10.2/mingw_64/lib/libQt6Core.a  -lmpr  -luserenv  -lmingw32  C:/Qt/6.10.2/mingw_64/lib/libQt6EntryPoint.a  -lshell32  -ld3d11  -ldxgi  -ldxguid  -ld3d12  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
@@ -177,7 +185,7 @@ build gst_test_autogen_timestamp_deps: phony
 #############################################
 # Utility command for gst_test_autogen
 
-build gst_test_autogen: phony CMakeFiles/gst_test_autogen gst_test_autogen/include/ui_mainwindow.h gst_test_autogen/timestamp gst_test_autogen/mocs_compilation.cpp gst_test_autogen_timestamp_deps
+build gst_test_autogen: phony CMakeFiles/gst_test_autogen gst_test_autogen/include/ui_mainwindow.h gst_test_autogen/include/ui_settings.h gst_test_autogen/timestamp gst_test_autogen/mocs_compilation.cpp gst_test_autogen_timestamp_deps
 
 
 #############################################
@@ -194,7 +202,7 @@ build gst_test_autogen/timestamp gst_test_autogen/mocs_compilation.cpp | ${cmake
 #############################################
 # Phony custom command for CMakeFiles\gst_test_autogen
 
-build CMakeFiles/gst_test_autogen gst_test_autogen/include/ui_mainwindow.h | ${cmake_ninja_workdir}CMakeFiles/gst_test_autogen ${cmake_ninja_workdir}gst_test_autogen/include/ui_mainwindow.h: phony gst_test_autogen/timestamp || gst_test_autogen_timestamp_deps
+build CMakeFiles/gst_test_autogen gst_test_autogen/include/ui_mainwindow.h gst_test_autogen/include/ui_settings.h | ${cmake_ninja_workdir}CMakeFiles/gst_test_autogen ${cmake_ninja_workdir}gst_test_autogen/include/ui_mainwindow.h ${cmake_ninja_workdir}gst_test_autogen/include/ui_settings.h: phony gst_test_autogen/timestamp || gst_test_autogen_timestamp_deps
 
 # =============================================================================
 # Target aliases.

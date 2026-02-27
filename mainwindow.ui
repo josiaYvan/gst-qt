@@ -30,14 +30,27 @@
    <widget class="QPushButton" name="btnAddView">
     <property name="geometry">
      <rect>
-      <x>470</x>
-      <y>130</y>
-      <width>56</width>
-      <height>18</height>
+      <x>445</x>
+      <y>107</y>
+      <width>81</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>Add View</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_setting">
+    <property name="geometry">
+     <rect>
+      <x>475</x>
+      <y>157</y>
+      <width>31</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
     </property>
    </widget>
   </widget>

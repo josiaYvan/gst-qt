@@ -338,6 +338,12 @@
 			"MU",
 			"EWIEGA46WW/moc_player.cpp",
 			null
+		],
+		[
+			"E:/EMIATV/dev/gst_test/settings.h",
+			"MU",
+			"EWIEGA46WW/moc_settings.cpp",
+			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
@@ -417,7 +423,8 @@
 	[
 		[ "E:/EMIATV/dev/gst_test/main.cpp", "MU", null ],
 		[ "E:/EMIATV/dev/gst_test/mainwindow.cpp", "MU", null ],
-		[ "E:/EMIATV/dev/gst_test/player.cpp", "MU", null ]
+		[ "E:/EMIATV/dev/gst_test/player.cpp", "MU", null ],
+		[ "E:/EMIATV/dev/gst_test/settings.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],
