@@ -10,12 +10,12 @@ class VideoPlayer : public QObject
 {
     Q_OBJECT
 public:
-    explicit VideoPlayer(QWidget *videoWidget, QObject *parent = nullptr);
+    explicit VideoPlayer(QObject *parent = nullptr);
     ~VideoPlayer();
 
     void setFile(const QString &filePath);
+    void addVideoWidget(QWidget *widget);
     void play();
-    void pause();
     void stop();
 
 private:
@@ -23,8 +23,10 @@ private:
     void handleMessage(GstMessage *msg);
 
 private:
-    QWidget *m_videoWidget;
-    GstElement *m_pipeline;
+    GstElement *pipeline;
+    GstElement *source;
+    GstElement *decodebin;
+    GstElement *tee;
 };
 
 #endif

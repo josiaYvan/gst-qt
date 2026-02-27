@@ -22,3 +22,12 @@
 1312	4731	7938840389227060	CMakeFiles/gst_test.dir/main.cpp.obj	fac0757de6ffc0c5
 1317	4817	7938840389288600	CMakeFiles/gst_test.dir/mainwindow.cpp.obj	8e9848a6fc2c0d48
 4817	5032	7938840424293632	gst_test.exe	60302eca6c5813da
+44	1082	7938844438684791	gst_test_autogen/timestamp	15ccbcd391df285
+44	1082	7938844438684791	gst_test_autogen/mocs_compilation.cpp	15ccbcd391df285
+44	1082	7938844438684791	E:/EMIATV/dev/gst_test/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/gst_test_autogen/timestamp	15ccbcd391df285
+44	1082	7938844438684791	E:/EMIATV/dev/gst_test/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/gst_test_autogen/mocs_compilation.cpp	15ccbcd391df285
+1095	4101	7938844439813726	CMakeFiles/gst_test.dir/player.cpp.obj	ced55c3c0cc43c07
+1083	4224	7938844439690840	CMakeFiles/gst_test.dir/gst_test_autogen/mocs_compilation.cpp.obj	f199589232671e30
+1087	4512	7938844439690840	CMakeFiles/gst_test.dir/main.cpp.obj	fac0757de6ffc0c5
+1091	4575	7938844439753008	CMakeFiles/gst_test.dir/mainwindow.cpp.obj	8e9848a6fc2c0d48
+48	391	7938855138344896	gst_test.exe	60302eca6c5813da

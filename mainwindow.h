@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "Player.h"
+#include <QPushButton>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {

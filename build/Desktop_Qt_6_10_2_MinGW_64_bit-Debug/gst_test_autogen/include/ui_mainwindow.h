@@ -14,6 +14,7 @@
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
 
@@ -24,6 +25,7 @@ class Ui_MainWindow
 public:
     QWidget *centralwidget;
     QGroupBox *videoWidget;
+    QPushButton *btnAddView;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -37,6 +39,9 @@ public:
         videoWidget = new QGroupBox(centralwidget);
         videoWidget->setObjectName("videoWidget");
         videoWidget->setGeometry(QRect(100, 50, 311, 201));
+        btnAddView = new QPushButton(centralwidget);
+        btnAddView->setObjectName("btnAddView");
+        btnAddView->setGeometry(QRect(470, 130, 56, 18));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
@@ -55,6 +60,7 @@ public:
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
         videoWidget->setTitle(QString());
+        btnAddView->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
     } // retranslateUi
 
 };

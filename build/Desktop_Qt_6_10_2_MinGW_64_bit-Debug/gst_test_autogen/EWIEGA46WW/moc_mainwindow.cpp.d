@@ -387,8 +387,11 @@ E:/EMIATV/dev/gst_test/build/Desktop_Qt_6_10_2_MinGW_64_bit-Debug/gst_test_autog
   C:/Qt/6.10.2/mingw_64/include/QtGui/qwindowdefs.h \
   C:/Qt/6.10.2/mingw_64/include/QtGui/qwindowdefs_win.h \
   C:/Qt/6.10.2/mingw_64/include/QtWidgets/QMainWindow \
+  C:/Qt/6.10.2/mingw_64/include/QtWidgets/QPushButton \
   C:/Qt/6.10.2/mingw_64/include/QtWidgets/QWidget \
+  C:/Qt/6.10.2/mingw_64/include/QtWidgets/qabstractbutton.h \
   C:/Qt/6.10.2/mingw_64/include/QtWidgets/qmainwindow.h \
+  C:/Qt/6.10.2/mingw_64/include/QtWidgets/qpushbutton.h \
   C:/Qt/6.10.2/mingw_64/include/QtWidgets/qsizepolicy.h \
   C:/Qt/6.10.2/mingw_64/include/QtWidgets/qtabwidget.h \
   C:/Qt/6.10.2/mingw_64/include/QtWidgets/qtwidgets-config.h \
