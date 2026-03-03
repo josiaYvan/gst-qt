@@ -1,5 +1,5 @@
 #include "mainwindow.h"
-#include "ui_mainwindow.h"
+#include "ui_mainwindow.h"*
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -10,21 +10,56 @@ MainWindow::MainWindow(QWidget *parent)
     setWindowTitle("Emia TV");
 
     playlist = new PlaylistManager(this);
-    player = new VideoPlayer(VideoPlayer::SourceType::Camera, this);
-    // player->setFile("C:/Users/crakn/Videos/Ilay alim-bavaka tao Gestemane ｜ Miora Volanandrasana - Jessy Andersen.mp4");
 
-    // Première vue
+    // CRUCIAL: Choisir le type de source ici
+    // player = new VideoPlayer(VideoPlayer::SourceType::Camera, this);  // CAMÉRA
+    player = new VideoPlayer(VideoPlayer::SourceType::File, this); // FICHIER
+
+    // Pour fichier seulement :
+    player->setFile("C:/Users/crakn/Videos/Ilay alim-bavaka tao Gestemane ｜ Miora Volanandrasana - Jessy Andersen.mp4");
+
     player->addVideoWidget(ui->video_preview);
     player->addVideoWidget(ui->video_live);
-
+    player->addVideoWidget(ui->video_test);
     player->play();
 
-    // -------PL VIEW--------------
+    // Playlist setup (reste identique)
     playlistView = new PlaylistView(this);
     ui->layout_playlist->addWidget(playlistView);
 
     connect(playlistView, &PlaylistView::filesDropped, this, &MainWindow::handleFilesDropped);
     connect(playlistView, &PlaylistView::playlistReordered, this, &MainWindow::handleReorderPlaylist);
+
+    // NOUVEAU: Boutons pour switcher (à connecter dans Qt Designer)
+    connect(ui->btn_find_video_devices, &QPushButton::clicked, [this]() {
+        stopCurrentPlayer();
+        player = new VideoPlayer(VideoPlayer::SourceType::Camera, this);
+        player->addVideoWidget(ui->video_preview);
+        player->addVideoWidget(ui->video_live);
+        player->addVideoWidget(ui->video_test);
+        player->play();
+        ui->statusbar->showMessage("Caméra activée", 3000);
+    });
+
+    connect(ui->btn_add_direct, &QPushButton::clicked, [this]() {
+        stopCurrentPlayer();
+        player = new VideoPlayer(VideoPlayer::SourceType::File, this);
+        player->setFile("C:/Users/crakn/Videos/Ilay alim-bavaka tao Gestemane ｜ Miora Volanandrasana - Jessy Andersen.mp4");
+        player->addVideoWidget(ui->video_preview);
+        player->addVideoWidget(ui->video_live);
+        player->addVideoWidget(ui->video_test);
+        player->play();
+        ui->statusbar->showMessage("Fichier activé", 3000);
+    });
+}
+
+void MainWindow::stopCurrentPlayer()
+{
+    if (player) {
+        player->stop();
+        player->deleteLater();
+        player = nullptr;
+    }
 }
 
 MainWindow::~MainWindow()

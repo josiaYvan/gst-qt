@@ -42,5 +42,6 @@ private:
     void processFile(const QString &file);
     void analyzeFileAsync(const QString &file, QStandardItem *loadingItem);
     void handleReorderPlaylist();
+    void stopCurrentPlayer();
 };
 #endif // MAINWINDOW_H

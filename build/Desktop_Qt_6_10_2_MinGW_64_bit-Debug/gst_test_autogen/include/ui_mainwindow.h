@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QCheckBox>
+#include <QtWidgets/QFormLayout>
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHBoxLayout>
@@ -23,6 +24,7 @@
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QSplitter>
 #include <QtWidgets/QStatusBar>
+#include <QtWidgets/QTimeEdit>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -82,8 +84,13 @@ public:
     QVBoxLayout *verticalLayout_7;
     QLabel *remaining_time_label_2;
     QWidget *widget_20;
+    QHBoxLayout *horizontalLayout_3;
+    QWidget *widget_21;
+    QVBoxLayout *verticalLayout_9;
     QCheckBox *loop_checkbox;
     QCheckBox *autoCleanPlaylist;
+    QWidget *widget_22;
+    QHBoxLayout *horizontalLayout_6;
     QPushButton *btn_setting;
     QWidget *widget_4;
     QHBoxLayout *horizontalLayout_4;
@@ -91,6 +98,14 @@ public:
     QSplitter *splitter_2;
     QSplitter *splitter;
     QWidget *widget;
+    QPushButton *btn_add_direct;
+    QWidget *formLayoutWidget;
+    QFormLayout *formLayout;
+    QVBoxLayout *camera_devices_layout;
+    QLabel *label_2;
+    QLabel *label;
+    QTimeEdit *duration_time;
+    QPushButton *btn_find_video_devices;
     QWidget *widget_13;
     QVBoxLayout *verticalLayout_2;
     QVBoxLayout *layout_playlist;
@@ -120,7 +135,7 @@ public:
     QPushButton *btn_take_selected;
     QPushButton *btn_take_live;
     QPushButton *btn_blackOut;
-    QWidget *widget_2;
+    QWidget *video_test;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -128,7 +143,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(1528, 1059);
+        MainWindow->resize(1590, 1057);
         MainWindow->setStyleSheet(QString::fromUtf8("background-color: rgb(31, 31, 31);\n"
 "color: rgb(208, 208, 208);\n"
 "border-radius: 5px;"));
@@ -147,8 +162,8 @@ public:
         horizontalLayout->setObjectName("horizontalLayout");
         widget_5 = new QWidget(frame_2);
         widget_5->setObjectName("widget_5");
-        widget_5->setMinimumSize(QSize(290, 164));
-        widget_5->setMaximumSize(QSize(290, 16777215));
+        widget_5->setMinimumSize(QSize(330, 164));
+        widget_5->setMaximumSize(QSize(330, 16777215));
         widget_5->setStyleSheet(QString::fromUtf8("background-color: rgb(31, 31, 31);\n"
 ""));
         verticalLayout_28 = new QVBoxLayout(widget_5);
@@ -173,7 +188,7 @@ public:
 
         video_live = new QGroupBox(widget_5);
         video_live->setObjectName("video_live");
-        video_live->setMinimumSize(QSize(282, 180));
+        video_live->setMinimumSize(QSize(320, 180));
         video_live->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 0, 0);border-radius: 3px;"));
 
         verticalLayout_28->addWidget(video_live);
@@ -336,8 +351,8 @@ public:
 
         widget_6 = new QWidget(frame_2);
         widget_6->setObjectName("widget_6");
-        widget_6->setMinimumSize(QSize(290, 0));
-        widget_6->setMaximumSize(QSize(290, 16777215));
+        widget_6->setMinimumSize(QSize(330, 0));
+        widget_6->setMaximumSize(QSize(330, 16777215));
         widget_6->setStyleSheet(QString::fromUtf8("background-color: rgb(31, 31, 31);\n"
 ""));
         verticalLayout_29 = new QVBoxLayout(widget_6);
@@ -363,7 +378,7 @@ public:
 
         video_preview = new QGroupBox(widget_6);
         video_preview->setObjectName("video_preview");
-        video_preview->setMinimumSize(QSize(282, 180));
+        video_preview->setMinimumSize(QSize(320, 180));
         video_preview->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 0, 0);border-radius: 3px;"));
 
         verticalLayout_29->addWidget(video_preview);
@@ -409,10 +424,15 @@ public:
 
         widget_20 = new QWidget(widget_9);
         widget_20->setObjectName("widget_20");
-        widget_20->setMaximumSize(QSize(16777215, 150));
-        loop_checkbox = new QCheckBox(widget_20);
+        widget_20->setMaximumSize(QSize(16777215, 100));
+        horizontalLayout_3 = new QHBoxLayout(widget_20);
+        horizontalLayout_3->setObjectName("horizontalLayout_3");
+        widget_21 = new QWidget(widget_20);
+        widget_21->setObjectName("widget_21");
+        verticalLayout_9 = new QVBoxLayout(widget_21);
+        verticalLayout_9->setObjectName("verticalLayout_9");
+        loop_checkbox = new QCheckBox(widget_21);
         loop_checkbox->setObjectName("loop_checkbox");
-        loop_checkbox->setGeometry(QRect(9, 11, 91, 16));
         QFont font2;
         font2.setBold(false);
         font2.setItalic(false);
@@ -420,16 +440,33 @@ public:
         font2.setStrikeOut(false);
         loop_checkbox->setFont(font2);
         loop_checkbox->setAutoFillBackground(false);
-        autoCleanPlaylist = new QCheckBox(widget_20);
+
+        verticalLayout_9->addWidget(loop_checkbox);
+
+        autoCleanPlaylist = new QCheckBox(widget_21);
         autoCleanPlaylist->setObjectName("autoCleanPlaylist");
-        autoCleanPlaylist->setGeometry(QRect(9, 35, 94, 16));
-        btn_setting = new QPushButton(widget_20);
+
+        verticalLayout_9->addWidget(autoCleanPlaylist);
+
+
+        horizontalLayout_3->addWidget(widget_21);
+
+        widget_22 = new QWidget(widget_20);
+        widget_22->setObjectName("widget_22");
+        horizontalLayout_6 = new QHBoxLayout(widget_22);
+        horizontalLayout_6->setObjectName("horizontalLayout_6");
+        btn_setting = new QPushButton(widget_22);
         btn_setting->setObjectName("btn_setting");
-        btn_setting->setGeometry(QRect(200, 20, 30, 30));
         btn_setting->setMinimumSize(QSize(30, 30));
         btn_setting->setAutoFillBackground(false);
         btn_setting->setStyleSheet(QString::fromUtf8("background-color: rgb(30, 30, 30);\n"
 "border-color: rgb(57, 57, 57);color: rgb(173, 173, 173);"));
+
+        horizontalLayout_6->addWidget(btn_setting);
+
+
+        horizontalLayout_3->addWidget(widget_22);
+
 
         verticalLayout_8->addWidget(widget_20);
 
@@ -473,6 +510,91 @@ public:
         widget->setMinimumSize(QSize(250, 0));
         widget->setMaximumSize(QSize(300, 16777215));
         widget->setStyleSheet(QString::fromUtf8("background-color: rgb(41, 41, 41);"));
+        btn_add_direct = new QPushButton(widget);
+        btn_add_direct->setObjectName("btn_add_direct");
+        btn_add_direct->setGeometry(QRect(190, 110, 85, 30));
+        btn_add_direct->setMinimumSize(QSize(30, 30));
+        btn_add_direct->setAutoFillBackground(false);
+        btn_add_direct->setStyleSheet(QString::fromUtf8("background-color: rgb(30, 30, 30);\n"
+"border-color: rgb(57, 57, 57);color: rgb(173, 173, 173);"));
+        formLayoutWidget = new QWidget(widget);
+        formLayoutWidget->setObjectName("formLayoutWidget");
+        formLayoutWidget->setGeometry(QRect(40, 10, 231, 81));
+        formLayout = new QFormLayout(formLayoutWidget);
+        formLayout->setObjectName("formLayout");
+        formLayout->setContentsMargins(0, 0, 0, 0);
+        camera_devices_layout = new QVBoxLayout();
+        camera_devices_layout->setObjectName("camera_devices_layout");
+
+        formLayout->setLayout(1, QFormLayout::ItemRole::FieldRole, camera_devices_layout);
+
+        label_2 = new QLabel(formLayoutWidget);
+        label_2->setObjectName("label_2");
+
+        formLayout->setWidget(1, QFormLayout::ItemRole::LabelRole, label_2);
+
+        label = new QLabel(formLayoutWidget);
+        label->setObjectName("label");
+
+        formLayout->setWidget(3, QFormLayout::ItemRole::LabelRole, label);
+
+        duration_time = new QTimeEdit(formLayoutWidget);
+        duration_time->setObjectName("duration_time");
+        duration_time->setStyleSheet(QString::fromUtf8("QTimeEdit {\n"
+"    background-color: #313131;        /* fond sombre */\n"
+"    color: #f0f0f0;                   /* texte clair */\n"
+"    border: 1px solid #4a4a4a;        /* bordure discr\303\250te */\n"
+"    border-radius: 3px;                /* coins arrondis */\n"
+"    padding: 3px 5px;\n"
+"    font: 13px \"Segoe UI\", \"Arial\", sans-serif;\n"
+"}\n"
+"\n"
+"QTimeEdit:focus {\n"
+"    border: 1px solid #6fa8dc;        /* bordure accent bleu clair */\n"
+"    background-color: #3a3a3a;        /* fond l\303\251g\303\250rement plus clair */\n"
+"}\n"
+"\n"
+"QTimeEdit::up-button, QTimeEdit::down-button {\n"
+"    subcontrol-origin: border;\n"
+"    width: 16px;\n"
+"    height: 16px;\n"
+"    border: 1px solid #4a4a4a;\n"
+"    background-color: #3a3a3a;        /* bouton discret */\n"
+"}\n"
+"\n"
+"QTimeEdit::up-button:hover, QTimeEdit::down-button:hover {\n"
+"    background-color: #505050;        /* l\303\251ger effet hover */\n"
+"}\n"
+"\n"
+"QTimeEdit::up-arrow, QTimeEdit::down-arrow {\n"
+"    width: 8px;\n"
+"    height"
+                        ": 8px;\n"
+"    border-style: solid;\n"
+"    border-width: 0 2px 2px 0;\n"
+"    display: block;\n"
+"    margin: auto;\n"
+"}\n"
+"\n"
+"QTimeEdit::up-arrow {\n"
+"    border-color: #f0f0f0;            /* fl\303\250che claire */\n"
+"    transform: rotate(-135deg);\n"
+"}\n"
+"\n"
+"QTimeEdit::down-arrow {\n"
+"    border-color: #f0f0f0;            /* fl\303\250che claire */\n"
+"    transform: rotate(45deg);\n"
+"}"));
+
+        formLayout->setWidget(3, QFormLayout::ItemRole::FieldRole, duration_time);
+
+        btn_find_video_devices = new QPushButton(widget);
+        btn_find_video_devices->setObjectName("btn_find_video_devices");
+        btn_find_video_devices->setGeometry(QRect(30, 110, 85, 30));
+        btn_find_video_devices->setMinimumSize(QSize(30, 30));
+        btn_find_video_devices->setAutoFillBackground(false);
+        btn_find_video_devices->setStyleSheet(QString::fromUtf8("background-color: rgb(30, 30, 30);\n"
+"border-color: rgb(57, 57, 57);color: rgb(173, 173, 173);"));
         splitter->addWidget(widget);
         widget_13 = new QWidget(splitter);
         widget_13->setObjectName("widget_13");
@@ -690,10 +812,10 @@ public:
 
         verticalLayout_31->addWidget(playout_control);
 
-        widget_2 = new QWidget(widget_3);
-        widget_2->setObjectName("widget_2");
+        video_test = new QWidget(widget_3);
+        video_test->setObjectName("video_test");
 
-        verticalLayout_31->addWidget(widget_2);
+        verticalLayout_31->addWidget(video_test);
 
         splitter->addWidget(widget_3);
         splitter_2->addWidget(splitter);
@@ -703,11 +825,27 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 1528, 18));
+        menubar->setGeometry(QRect(0, 0, 1590, 22));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
         MainWindow->setStatusBar(statusbar);
+        QWidget::setTabOrder(publish_live, open_preview);
+        QWidget::setTabOrder(open_preview, horizontalSlider_duration);
+        QWidget::setTabOrder(horizontalSlider_duration, pushButton_seekb);
+        QWidget::setTabOrder(pushButton_seekb, pushButton_playpause);
+        QWidget::setTabOrder(pushButton_playpause, pushButton_stop);
+        QWidget::setTabOrder(pushButton_stop, pushButton_seekf);
+        QWidget::setTabOrder(pushButton_seekf, pushButton_volume);
+        QWidget::setTabOrder(pushButton_volume, horizontalSlider_volume);
+        QWidget::setTabOrder(horizontalSlider_volume, btn_take_next);
+        QWidget::setTabOrder(btn_take_next, btn_take_selected);
+        QWidget::setTabOrder(btn_take_selected, btn_take_live);
+        QWidget::setTabOrder(btn_take_live, btn_blackOut);
+        QWidget::setTabOrder(btn_blackOut, autoCleanPlaylist);
+        QWidget::setTabOrder(autoCleanPlaylist, loop_checkbox);
+        QWidget::setTabOrder(loop_checkbox, btn_setting);
+        QWidget::setTabOrder(btn_setting, btn_add_direct);
 
         retranslateUi(MainWindow);
 
@@ -735,7 +873,11 @@ public:
         remaining_time_label_2->setText(QCoreApplication::translate("MainWindow", "00:00:00:00", nullptr));
         loop_checkbox->setText(QCoreApplication::translate("MainWindow", "Loop playlist", nullptr));
         autoCleanPlaylist->setText(QCoreApplication::translate("MainWindow", "Clean playlist", nullptr));
-        btn_setting->setText(QString());
+        btn_setting->setText(QCoreApplication::translate("MainWindow", "Settings", nullptr));
+        btn_add_direct->setText(QCoreApplication::translate("MainWindow", "Add LIVE", nullptr));
+        label_2->setText(QCoreApplication::translate("MainWindow", "Camera", nullptr));
+        label->setText(QCoreApplication::translate("MainWindow", "Dur\303\251e du live", nullptr));
+        btn_find_video_devices->setText(QCoreApplication::translate("MainWindow", "Find devices", nullptr));
         label_current_time->setText(QCoreApplication::translate("MainWindow", "00:00:00", nullptr));
         label_total_time->setText(QCoreApplication::translate("MainWindow", "00:00:00", nullptr));
         pushButton_seekb->setText(QString());
