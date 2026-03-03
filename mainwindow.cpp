@@ -10,11 +10,12 @@ MainWindow::MainWindow(QWidget *parent)
     setWindowTitle("Emia TV");
 
     playlist = new PlaylistManager(this);
-    player = new VideoPlayer(this);
-    player->setFile("C:/Users/crakn/Videos/Ilay alim-bavaka tao Gestemane ｜ Miora Volanandrasana - Jessy Andersen.mp4");
+    player = new VideoPlayer(VideoPlayer::SourceType::Camera, this);
+    // player->setFile("C:/Users/crakn/Videos/Ilay alim-bavaka tao Gestemane ｜ Miora Volanandrasana - Jessy Andersen.mp4");
 
     // Première vue
     player->addVideoWidget(ui->video_preview);
+    player->addVideoWidget(ui->video_live);
 
     player->play();
 

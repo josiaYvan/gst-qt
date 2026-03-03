@@ -1,14 +1,22 @@
 #include "Player.h"
 #include <QDebug>
 
-VideoPlayer::VideoPlayer(QObject *parent)
+VideoPlayer::VideoPlayer(SourceType type, QObject *parent)
     : QObject(parent)
 {
     gst_init(nullptr, nullptr);
 
     pipeline = gst_pipeline_new("video-pipeline");
 
-    source = gst_element_factory_make("filesrc", "source");
+    if (type == SourceType::File) {
+        source = gst_element_factory_make("filesrc", "source");
+    } else {
+#ifdef Q_OS_WIN
+        source = gst_element_factory_make("ksvideosrc", "source");
+#else
+        source = gst_element_factory_make("v4l2src", "source");
+#endif
+    }
     decodebin = gst_element_factory_make("decodebin", "decoder");
     tee = gst_element_factory_make("tee", "tee");
 

@@ -222,10 +222,29 @@ void PlaylistView::onContextMenu(const QPoint &pos)
     int row = index.row();
 
     if (selectedAction == removeAction) {
-        emit requestRemoveMedia(row);
-    } else if (selectedAction == moveUpAction) {
-        if (row > 0) emit requestMoveMedia(row, row - 1);
-    } else if (selectedAction == moveDownAction) {
-        if (row < m_model->rowCount() - 1) emit requestMoveMedia(row, row + 1);
+        // 1️⃣ Désélectionner pour éviter les crashs
+        selectionModel()->clearSelection();
+
+        // 2️⃣ Retirer proprement l'item du modèle
+        m_model->takeRow(row);
+
+        // 3️⃣ Forcer un refresh de la view
+        m_model->layoutChanged();
+        viewport()->update();
+    }
+    else if (selectedAction == moveUpAction) {
+        if (row <= 0) return;
+        m_model->layoutAboutToBeChanged();
+        QList<QStandardItem*> items = m_model->takeRow(row);
+        m_model->insertRow(row - 1, items);
+        m_model->layoutChanged();
+    }
+    else if (selectedAction == moveDownAction) {
+        if (row >= m_model->rowCount() - 1) return;
+        m_model->layoutAboutToBeChanged();
+        QList<QStandardItem*> items = m_model->takeRow(row);
+        m_model->insertRow(row + 1, items);
+        m_model->layoutChanged();
     }
 }
+

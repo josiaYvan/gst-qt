@@ -29,6 +29,8 @@ public:
 private slots:
     void on_btn_setting_clicked();
 
+private slots:
+
 private:
     Ui::MainWindow *ui;
     Settings *settings;

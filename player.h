@@ -6,11 +6,13 @@
 #include <gst/gst.h>
 #include <gst/video/videooverlay.h>
 
+
 class VideoPlayer : public QObject
 {
     Q_OBJECT
 public:
-    explicit VideoPlayer(QObject *parent = nullptr);
+    enum class SourceType { File, Camera };
+    explicit VideoPlayer(SourceType type, QObject *parent = nullptr);
     ~VideoPlayer();
 
     void setFile(const QString &filePath);
